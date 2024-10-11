@@ -1,14 +1,14 @@
 import express, { Application } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
-import { initializeDatabase } from './config/database'; // Inicialización de la DB
+import { initializeDatabase } from './config/database';
 import dotenv from 'dotenv';
 
 // Cargar las variables de entorno
 dotenv.config();
 
 const app: Application = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Middlewares
 app.use(cors());
