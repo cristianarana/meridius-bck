@@ -1,18 +1,14 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "strict": true,        // Habilita todas las comprobaciones estrictas de TypeScript
-    "esModuleInterop": true,  // Mejora la interoperabilidad con los módulos CommonJS y ES
-    "skipLibCheck": true,  // Evita comprobaciones de tipo en archivos de declaración (más rápido)
-    "outDir": "./dist",    // El directorio de salida para los archivos compilados
-    "rootDir": "./src",    // El directorio raíz para los archivos de TypeScript
-    "resolveJsonModule": true, // Permite importar archivos JSON
-    "moduleResolution": "node", // Resuelve los módulos de la manera que Node.js lo hace
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "strictPropertyInitialization": false
+    "target": "ES6",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "rootDir": "./src"
   },
-  "include": ["src"],  // Incluir solo la carpeta src para la compilación
-  "exclude": ["node_modules"]  // Excluir node_modules para evitar compilar dependencias
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }

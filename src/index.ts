@@ -1,13 +1,28 @@
-import './server';
-import "reflect-metadata";
-import express from "express";
-import { createConnection } from "typeorm";
+import 'reflect-metadata';
+import { createConnection } from 'typeorm';
+import dotenv from 'dotenv';
+import express from 'express';
+
+dotenv.config();
 
 const app = express();
+const PORT = process.env.API_PORT || 3000;
+
 app.use(express.json());
 
-createConnection().then(() => {
-  app.listen(3000, () => {
-    console.log("Server is running on port 3000");
-  });
-}).catch(error => console.log(error));
+async function main() {
+    try {
+      // Conectar a la base de datos
+      const connection = await createConnection();
+      console.log('Conectado a la base de datos');
+  
+      // Puedes agregar más operaciones aquí si lo deseas
+      app.listen(PORT, () => {
+        console.log(`Servidor corriendo en http://localhost:${PORT}`);
+      });
+    } catch (error) {
+      console.error('Error al conectar a la base de datos:', error);
+    }   
+  }
+
+  main();

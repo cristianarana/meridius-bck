@@ -5,7 +5,9 @@
     "username": "postgres",
     "password": "Abc.123456",
     "database": "meridius",
-    "entities": ["src/entity/**/*.ts"],
     "synchronize": false,
-    "logging": false
+    "logging": false,
+    "entities": ["src/entity/**/*.ts"],
+    "migrations": ["src/migration/**/*.ts"],
+    "subscribers": ["src/subscriber/**/*.ts"]
   }
