@@ -7,8 +7,8 @@ export class Player extends BaseEntity{
   @Column()
   fullname: string;
 
-  @Column()
-  birthDate: Date;
+  @Column({nullable: true})
+  birthDate?: Date;
 
   @Column({ type: 'float' })
   weight: number;
@@ -19,11 +19,14 @@ export class Player extends BaseEntity{
   @Column()
   position: string;
 
-  @Column()
-  alternativePosition: string;
+  @Column({nullable: true})
+  alternativePosition?: string;
 
-  @Column()
-  weakFoot: string;
+  @Column({nullable: true})
+  weakFoot?: string;
+
+  @Column({nullable: true})
+  strongFoot?: string;
   
   @Column()
   aditionalInfo: string;
